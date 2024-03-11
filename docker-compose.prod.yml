@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+
+  react-prod:
+    container_name: react-prod
+    build:
+      dockerfile: prod.Dockerfile
+    ports:
+      - "80:80"

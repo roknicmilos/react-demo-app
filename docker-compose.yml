@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+
+  react:
+    container_name: react
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app # Mount the current directory into the container
+      - node-modules:/usr/src/app/node_modules # Use a named volume for node_modules
+
+volumes:
+  node-modules:

@@ -148,3 +148,32 @@ The served application is built using the `npm run build` script, which
 chunk splitting, etc.).
 Served application is static, and it is not possible to see the changes
 immediately without rebuilding the image and restarting the container.
+
+## Environment Variables
+
+In both development and production setups, only the environment variables
+prefixed with `REACT_APP_` are available to the React application (plus
+`NODE_ENV`).
+
+### Development
+
+In the development setup, if you pass environment variables to the container
+on the container start, they will be available to the React application.
+You can do this by adding the `environment` key to the `docker-compose.yml`
+and defining the environment variables there, or by creating a `.env` file
+in the root of the project and defining the environment variables there.
+
+### Production
+
+In production setup, you need to make the environment variables available
+during the Docker image build process. You can do this by adding the `args`
+key to the `prod.Dockerfile` and defining the environment variables there,
+or by creating a `.env` file in the root of the project and defining the
+environment variables there (just like in production setup).
+
+### `.env` files
+
+Besides `.env` file, there are 
+[other files](https://create-react-app.dev/docs/adding-custom-environment-variables/#what-other-env-files-can-be-used)
+that you can use to set environment variables and each of them has its 
+own priority.

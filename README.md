@@ -1,12 +1,28 @@
 # React.js with Docker Compose
 
+What will you learn here:
+
+- How to set up a **development environment** for a React.js application using Docker Compose
+- How to set up a **production environment** for a React.js application using Docker Compose
+- How to use **environment variables** in a React.js application with Docker Compose
+
+This repository contains a simple React.js application that is set up
+to run in a Docker container using Docker Compose. It is set up for both
+development and production environments. Keep reading to find out how
+to do it yourself.
+
+<br/>
+
 ## Create React App
 
-Create a React.js project using [Create React App](https://create-react-app.dev/) tool:
+Before setting up any environment, we need to create a React.js project.
+We can do this with [Create React App](https://create-react-app.dev/) tool:
 
 ```bash
 npx create-react-app react-demo-app
 ```
+
+<br/>
 
 ## Development Setup
 
@@ -85,6 +101,8 @@ be added to the `node_modules` directory in the named volume. On the host,
 you will see the added package only in the `package.json` (and
 `package-lock.json`) file.
 
+<br/>
+
 ## Production Setup
 
 ### Steps
@@ -149,6 +167,8 @@ chunk splitting, etc.).
 Served application is static, and it is not possible to see the changes
 immediately without rebuilding the image and restarting the container.
 
+<br/>
+
 ## Environment Variables
 
 In both development and production setups, only the environment variables
@@ -173,7 +193,7 @@ environment variables there (just like in production setup).
 
 ### `.env` files
 
-Besides `.env` file, there are 
+Besides `.env` file, there are
 [other files](https://create-react-app.dev/docs/adding-custom-environment-variables/#what-other-env-files-can-be-used)
-that you can use to set environment variables and each of them has its 
+that you can use to set environment variables and each of them has its
 own priority.
